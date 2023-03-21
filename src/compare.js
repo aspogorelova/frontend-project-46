@@ -1,9 +1,6 @@
-// import readFile from "./read.js";
 import _ from 'lodash';
 
 const compareObject = (data1, data2, depth = 2) => {  
-  // const data1 = readFile(file1);
-  // const data2 = readFile(file2);
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
   const keys = _.union(keys1, keys2);
