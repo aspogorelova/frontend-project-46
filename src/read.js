@@ -1,8 +1,12 @@
 import path from 'path';
 import { readFileSync } from 'fs';
-import { cwd } from 'process';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const getPathFile = (file) => path.resolve(cwd(), file);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const getPathFile = (filename) => path.join(__dirname, '..', '__tests__', '__fixtures__', filename);
 
 const readFile = (file) => {
   const path = getPathFile(file);
@@ -11,4 +15,4 @@ const readFile = (file) => {
 }
 
 export default readFile;
-// console.log(readFile('file1.json'));
+console.log(readFile('file1.json'));
