@@ -1,4 +1,4 @@
-import readFile from './read.js';
+import readFile from './parsers.js';
 import compareObject from './compare.js';
 
 export default (file1, file2) => {
