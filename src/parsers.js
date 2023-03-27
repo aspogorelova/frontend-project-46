@@ -11,12 +11,12 @@ const getPathFile = (filename) => path.join(__dirname, '..', '__tests__', '__fix
 const readFile = (file) => {
   const pathOfFile = getPathFile(file);
   const data = readFileSync(pathOfFile, 'utf-8');
-  const getExtension = path.extname(pathOfFile).replace('.', '');
-  if (getExtension === 'json') {
-    return JSON.parse(data);
-  }
-  if (getExtension === 'yaml' || getExtension === 'yml') {
-    return yaml.load(data);
+  const format = path.extname(pathOfFile).replace('.', '');
+  switch (format) {
+    case 'json': return JSON.parse(data);
+    case 'yaml': return yaml.load(data);
+    case 'yml': return yaml.load(data);
+    default: return null;
   }
 };
 
