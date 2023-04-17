@@ -16,6 +16,7 @@ const readFile = (file) => {
     case 'json': return JSON.parse(data);
     case 'yaml': return yaml.load(data);
     case 'yml': return yaml.load(data);
+    case 'txt': return data;
     default: return null;
   }
 };

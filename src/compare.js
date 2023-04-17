@@ -1,29 +1,37 @@
 import _ from 'lodash';
 
-const compareObject = (data1, data2, depth = 2) => {
+const compareObject = (data1, data2) => {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
   const keys = _.union(keys1, keys2);
+  const sortedKeys = _.sortBy(keys);
 
-  const replacer = ' ';
-  const spacesCount = 1;
-
-  const indentSize = depth * spacesCount;
-  const currentIndent = replacer.repeat(indentSize);
-
-  const lines = keys.map((key) => {
+  const treeOfDiff = sortedKeys.map((key) => {
+    if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {
+      return {
+        key, type: 'object', children: compareObject(data1[key], data2[key]),
+      };
+    }
     if (!_.has(data1, key)) {
-      return `${currentIndent}+ ${key}: ${data2[key]}`;
+      return {
+        key, type: 'added', value: data2[key],
+      };
     }
     if (!_.has(data2, key)) {
-      return `${currentIndent}- ${key}: ${data1[key]}`;
+      return {
+        key, type: 'deleted', value: data1[key],
+      };
     }
-    if (data1[key] === data2[key]) {
-      return `${currentIndent}  ${key}: ${data1[key]}`;
+    if (data1[key] !== data2[key]) {
+      return {
+        key, type: 'changed', oldValue: data1[key], newValue: data2[key],
+      };
     }
-    return `${currentIndent}- ${key}: ${data1[key]}\n${currentIndent}+ ${key}: ${data2[key]}`;
+    return {
+      key, type: 'unchanged', value: data2[key],
+    };
   });
-  return ['{', ...lines, '}'].join('\n');
+  return treeOfDiff;
 };
 
 export default compareObject;
