@@ -1,4 +1,5 @@
 import _ from 'lodash';
+// import readFile from './parsers.js';
 
 const compareObject = (data1, data2) => {
   const keys1 = Object.keys(data1);
@@ -33,5 +34,9 @@ const compareObject = (data1, data2) => {
   });
   return treeOfDiff;
 };
+
+// const data1 = readFile('file1.json');
+// const data2 = readFile('file2.json');
+// console.log('compareObject  ', compareObject(data1, data2));
 
 export default compareObject;

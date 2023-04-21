@@ -43,7 +43,7 @@ const makeStylish = (data, depth = 1) => {
         return `${spaceChangedKey(depth)}- ${item.key}: ${getValue(item.value, depth + 1)}`;
 
       default:
-        return 'Unknown format';
+        return 'Error';
     }
   });
   return `{\n${formatedData.join('\n')}\n${spaceForClosedBracket(depth)}}`;
