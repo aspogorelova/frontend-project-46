@@ -1,8 +1,8 @@
 import { expect, test } from '@jest/globals';
-import gendiff from '../../src/index.js';
 import path from 'path';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
+import gendiff from '../../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
