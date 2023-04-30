@@ -25,10 +25,13 @@ Run next commands:
 git clone git@github.com:aspogorelova/frontend-project-46.git
 ```
 ```sh
+cd frontend-project-46/
+```
+```sh
 make install
 ```
 ```sh
-npm link
+sudo npm link
 ```
 
 ## 🚨 Helper
@@ -53,18 +56,22 @@ gendiff --format json <name of file1> <name of file2>
 ```
 
 ## 👀 Demonstration
+
+### Installation:
+<a href="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY"><img src="/img/6.jpg"></a>
+
 ### Compare "flat" json-files in defaul format:
 
-<a href="https://asciinema.org/a/bP5auqO2kJtH4S1b2zbB6xCDs">JSON format</a>
+<a href="https://asciinema.org/a/bP5auqO2kJtH4S1b2zbB6xCDs"><img src="/img/1.jpg"></a>
 
 ### Compare "flat" yaml-files in default format: 
-<a href="https://asciinema.org/a/rX6pKMHgnPCm63rWG5WAl2BJP"></a>
+<a href="https://asciinema.org/a/rX6pKMHgnPCm63rWG5WAl2BJP"><img src="/img/2.jpg"></a>
 
 ### Compare nested files json and yaml in default format:  
-<a href="https://asciinema.org/a/lgfeQ7oE9UAcesTJmCKyPOF0I"></a>
+<a href="https://asciinema.org/a/lgfeQ7oE9UAcesTJmCKyPOF0I"><img src="/img/3.jpg"></a>
 
 ### Compare nested files json and yaml in plain format:  
-<a href="https://asciinema.org/a/oWCxB866gdoV0WFL8UTtIbxIZ"></a>
+<a href="https://asciinema.org/a/oWCxB866gdoV0WFL8UTtIbxIZ"><img src="/img/4.jpg"></a>
 
 ### Compare nested files yaml and json in json format:  
-<a href="https://asciinema.org/a/ZRuRhhLrCHzOlwyuFkIY6quvf"></a>
+<a href="https://asciinema.org/a/ZRuRhhLrCHzOlwyuFkIY6quvf"><img src="/img/5.jpg"></a>
