@@ -17,6 +17,7 @@ const expectResultJson = readFileSync(getPathFile('jsonFormat.txt'), 'utf-8');
 test.each([
   { file1: 'file1.json', file2: 'file2.json', format: 'stylish', expectResult: expectResultStylish },
   { file1: 'file1.yaml', file2: 'file2.yaml', format: 'stylish', expectResult: expectResultStylish },
+  { file1: 'file1.yml', file2: 'file2.yml', format: 'stylish', expectResult: expectResultStylish },
   { file1: 'file1.json', file2: 'file2.yaml', format: 'stylish', expectResult: expectResultStylish },
   { file1: 'file1.yaml', file2: 'file2.json', format: 'stylish', expectResult: expectResultStylish },
   { file1: 'firstFile1.json', file2: 'firstFile2.json', format: 'stylish', expectResult: expectResultStylish1 },
@@ -25,10 +26,12 @@ test.each([
   { file1: 'firstFile1.yaml', file2: 'firstFile2.json', format: 'stylish', expectResult: expectResultStylish1 },
   { file1: 'file1.json', file2: 'file2.json', format: 'plain', expectResult: expectResultPlain },
   { file1: 'file1.yaml', file2: 'file2.yaml', format: 'plain', expectResult: expectResultPlain },
+  { file1: 'file1.yml', file2: 'file2.yml', format: 'plain', expectResult: expectResultPlain },
   { file1: 'file1.json', file2: 'file2.yaml', format: 'plain', expectResult: expectResultPlain },
   { file1: 'file1.yaml', file2: 'file2.json', format: 'plain', expectResult: expectResultPlain },
   { file1: 'file1.json', file2: 'file2.json', format: 'json', expectResult: expectResultJson },
   { file1: 'file1.yaml', file2: 'file2.yaml', format: 'json', expectResult: expectResultJson },
+  { file1: 'file1.yml', file2: 'file2.yml', format: 'json', expectResult: expectResultJson },
   { file1: 'file1.json', file2: 'file2.yaml', format: 'json', expectResult: expectResultJson },
   { file1: 'file1.yaml', file2: 'file2.json', format: 'json', expectResult: expectResultJson },
 ])('Compare files $file1 and $file2 format $format', ({ file1, file2, format, expectResult }) => {
