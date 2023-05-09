@@ -14,11 +14,11 @@ const makePlain = (data) => {
   const iter = (node, path) => {
     const name = node.key;
     const currentPath = [...path, name];
-    if (node.type === 'object') {
-      return node.children.map((item) => iter(item, currentPath));
-    }
 
     switch (node.type) {
+      case 'nested':
+        return node.children.map((item) => iter(item, currentPath));
+
       case 'added':
         return `Property '${currentPath.join('.')}' was added with value: ${getValue(node.value)}`;
 
@@ -26,20 +26,20 @@ const makePlain = (data) => {
         return `Property '${currentPath.join('.')}' was removed`;
 
       case 'changed':
-        return `Property '${currentPath.join('.')}' was updated. From ${getValue(node.oldValue)} to ${getValue(node.newValue)}`;
+        return `Property '${currentPath.join('.')}' was updated. From ${getValue(node.value1)} to ${getValue(node.value2)}`;
 
       case 'unchanged':
-        return 'unchanged';
+        return null;
 
       default:
-        return 'Error';
+        throw new Error(`Unknown operation: '${node.type}'`);
     }
   };
 
   const result = data
     .flatMap((item) => iter(item, []))
     .flatMap((item) => item)
-    .filter((item) => item !== 'unchanged');
+    .filter((item) => item !== null);
   return result.join('\n');
 };
 

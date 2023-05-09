@@ -1,16 +1,13 @@
 import path from 'path';
-import { readFileSync } from 'fs';
 import yaml from 'js-yaml';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getPathFile = (filename) => path.join(__dirname, '..', '__tests__', '__fixtures__', filename);
+export const getPathFile = (filename) => path.join(__dirname, '..', '__tests__', '__fixtures__', filename);
 
-const readFile = (file) => {
-  const pathOfFile = getPathFile(file);
-  const data = readFileSync(pathOfFile, 'utf-8');
+export const getFormat = (pathOfFile, data) => {
   const format = path.extname(pathOfFile).replace('.', '');
   switch (format) {
     case 'json': return JSON.parse(data);
@@ -20,5 +17,3 @@ const readFile = (file) => {
     default: return null;
   }
 };
-
-export default readFile;
