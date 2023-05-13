@@ -1,6 +1,5 @@
-import { getPathFile } from './parsers.js';
 import { readFileSync } from 'fs';
-import { getFormat } from './parsers.js';
+import { getPathFile, getFormat } from './parsers.js';
 import compareObject from './compare.js';
 import makeFormatting from './formatters/index.js';
 
