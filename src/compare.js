@@ -1,7 +1,4 @@
 import _ from 'lodash';
-// import { getPathFile } from './parsers.js';
-// import { readFileSync } from 'fs';
-// import { getFormat } from './parsers.js';
 
 const compareObject = (data1, data2) => {
   const keys1 = Object.keys(data1);
@@ -28,11 +25,3 @@ const compareObject = (data1, data2) => {
 };
 
 export default compareObject;
-
-// const pathOfFile1 = getPathFile('file1.json');
-// const pathOfFile2 = getPathFile('file2.json');
-// const contentData1 = readFileSync(pathOfFile1, 'utf-8');
-// const contentData2 = readFileSync(pathOfFile2, 'utf-8');
-// const data1 = getFormat(pathOfFile1, contentData1);
-// const data2 = getFormat(pathOfFile2, contentData2);
-// console.log('result  ', compareObject(data1, data2));
