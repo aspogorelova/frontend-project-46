@@ -34,5 +34,5 @@ test.each([
   const resultFunction = gendiff(getPathFile(file1), getPathFile(file2), format);
   const expected = readFile(expectResult);
 
-  expect(resultFunction).toBe(expected);
+  expect(resultFunction).toEqual(expected);
 });
