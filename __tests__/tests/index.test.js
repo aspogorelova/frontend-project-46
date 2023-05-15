@@ -13,6 +13,8 @@ const readFile = (filename) => readFileSync(getPathFile(filename), 'utf-8');
 test.each([
   { file1: 'file1.json', file2: 'file2.json', format: 'stylish', expectResult: 'stylishFormat.txt' },
   { file1: 'file1.yaml', file2: 'file2.yaml', format: 'stylish', expectResult: 'stylishFormat.txt' },
+  { file1: 'file1.json', file2: 'file2.json', expectResult: 'stylishFormat.txt' },
+  { file1: 'file1.yaml', file2: 'file2.yaml', expectResult: 'stylishFormat.txt' },
   { file1: 'file1.yml', file2: 'file2.yml', format: 'stylish', expectResult: 'stylishFormat.txt' },
   { file1: 'file1.json', file2: 'file2.yaml', format: 'stylish', expectResult: 'stylishFormat.txt' },
   { file1: 'file1.yaml', file2: 'file2.json', format: 'stylish', expectResult: 'stylishFormat.txt' },

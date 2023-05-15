@@ -3,7 +3,7 @@ import getFormat from './parsers.js';
 import compareObject from './compare.js';
 import makeFormatting from './formatters/index.js';
 
-const gendiff = (pathOfFile1, pathOfFile2, format) => {
+const gendiff = (pathOfFile1, pathOfFile2, format = 'stylish') => {
   const contentData1 = readFileSync(pathOfFile1, 'utf-8');
   const contentData2 = readFileSync(pathOfFile2, 'utf-8');
   const data1 = getFormat(pathOfFile1, contentData1);
