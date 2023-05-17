@@ -2,22 +2,21 @@ import makeStylish from './stylish.js';
 import makePlain from './plain.js';
 
 const makeFormatting = (treeDiff, format) => {
-  let result;
   switch (format) {
-    case 'stylish': result = makeStylish(treeDiff);
+    case 'stylish': return makeStylish(treeDiff);
       break;
 
-    case 'plain': result = makePlain(treeDiff);
+    case 'plain': return makePlain(treeDiff);
       break;
 
-    case 'json': result = JSON.stringify(treeDiff);
+    case 'json': return JSON.stringify(treeDiff);
       break;
 
     default:
       throw new Error(`False format ${format}`);
   }
 
-  return result;
+  return format;
 };
 
 export default makeFormatting;
