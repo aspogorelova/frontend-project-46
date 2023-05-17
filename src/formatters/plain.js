@@ -7,6 +7,10 @@ const getValue = (value) => {
     return `'${value}'`;
   }
 
+  if (typeof value === 'number') {
+    return value;
+  }
+
   return String('[complex value]');
 };
 
