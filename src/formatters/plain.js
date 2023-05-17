@@ -3,7 +3,7 @@ const getValue = (value) => {
     return value;
   }
 
-  if (typeof value === 'string' || typeof value === 'number') {
+  if (typeof value === 'string') {
     return `'${value}'`;
   }
 
