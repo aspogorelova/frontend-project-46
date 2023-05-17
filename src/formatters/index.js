@@ -13,8 +13,8 @@ const makeFormatting = (treeDiff, format) => {
     case 'json': result = JSON.stringify(treeDiff);
       break;
 
-    default: result = null;
-      break;
+    default:
+      throw new Error(`False format ${format}`);
   }
 
   return result;
