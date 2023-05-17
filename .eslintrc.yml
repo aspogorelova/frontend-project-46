@@ -19,9 +19,9 @@ rules:
   no-console: 0
   import/extensions: 0
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-  object-curly-newline: ["error", {
-        "ObjectExpression": { "multiline": true, "minProperties": 5 },
-        "ObjectPattern": { "multiline": true },
-        "ImportDeclaration": "never",
-        "ExportDeclaration": "never"
-    }]
+  # object-curly-newline: ["error", {
+  #       "ObjectExpression": { "multiline": true, "minProperties": 5 },
+  #       "ObjectPattern": { "multiline": true },
+  #       "ImportDeclaration": "never",
+  #       "ExportDeclaration": "never"
+  #   }]
