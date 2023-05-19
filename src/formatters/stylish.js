@@ -18,32 +18,36 @@ const getValue = (value, depth) => {
   return ['{', ...lines, `${getIndent(depth)}}`].join('\n');
 };
 
-const makeStylish = (data, depth = 1) => {
-  const formatedData = data.flatMap((item) => {
-    switch (item.type) {
-      case 'nested':
-        return `${getIndent(depth)}    ${item.key}: ${makeStylish(item.children, depth + 1)}`;
+const makeStylish = (data) => {
+  const iter = (dataDiff, depth) => {
+    const formatedData = dataDiff.flatMap((item) => {
+      switch (item.type) {
+        case 'nested':
+          return `${getIndent(depth)}    ${item.key}: ${iter(item.children, depth + 1)}`;
 
-      case 'unchanged':
-        return `${getIndent(depth)}    ${item.key}: ${getValue(item.value, depth + 1)}`;
+        case 'unchanged':
+          return `${getIndent(depth)}    ${item.key}: ${getValue(item.value, depth + 1)}`;
 
-      case 'changed':
-        return [
-          `${getIndent(depth)}  - ${item.key}: ${getValue(item.value1, depth + 1)}`,
-          `${getIndent(depth)}  + ${item.key}: ${getValue(item.value2, depth + 1)}`,
-        ];
+        case 'changed':
+          return [
+            `${getIndent(depth)}  - ${item.key}: ${getValue(item.value1, depth + 1)}`,
+            `${getIndent(depth)}  + ${item.key}: ${getValue(item.value2, depth + 1)}`,
+          ];
 
-      case 'added':
-        return `${getIndent(depth)}  + ${item.key}: ${getValue(item.value, depth + 1)}`;
+        case 'added':
+          return `${getIndent(depth)}  + ${item.key}: ${getValue(item.value, depth + 1)}`;
 
-      case 'deleted':
-        return `${getIndent(depth)}  - ${item.key}: ${getValue(item.value, depth + 1)}`;
+        case 'deleted':
+          return `${getIndent(depth)}  - ${item.key}: ${getValue(item.value, depth + 1)}`;
 
-      default:
-        return 'Error';
-    }
-  });
-  return `{\n${formatedData.join('\n')}\n${getIndent(depth)}}`;
+        default:
+          return 'Error';
+      }
+    });
+    return `{\n${formatedData.join('\n')}\n${getIndent(depth)}}`;
+  }
+  
+  return iter(data, 1);
 };
 
 export default makeStylish;
