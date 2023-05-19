@@ -45,8 +45,8 @@ const makeStylish = (data) => {
       }
     });
     return `{\n${formatedData.join('\n')}\n${getIndent(depth)}}`;
-  }
-  
+  };
+
   return iter(data, 1);
 };
 
