@@ -1,17 +1,11 @@
+import _ from 'lodash';
+
 const getValue = (value) => {
-  if (value === null || value === true || value === false) {
-    return value;
+  if (_.isObject(value)) {
+    return String('[complex value]'); 
   }
 
-  if (typeof value === 'string') {
-    return `'${value}'`;
-  }
-
-  if (typeof value === 'number') {
-    return value;
-  }
-
-  return String('[complex value]');
+  return (typeof value === 'string' || typeof value === 'number') ? `'${value}'` : value;
 };
 
 const makePlain = (data) => {
@@ -21,7 +15,7 @@ const makePlain = (data) => {
 
     switch (node.type) {
       case 'nested':
-        return node.children.map((item) => iter(item, currentPath));
+        return node.children.flatMap((item) => iter(item, currentPath));
 
       case 'added':
         return `Property '${currentPath.join('.')}' was added with value: ${getValue(node.value)}`;
@@ -42,7 +36,6 @@ const makePlain = (data) => {
 
   const result = data
     .flatMap((item) => iter(item, []))
-    .flatMap((item) => item)
     .filter((item) => item !== null);
   return result.join('\n');
 };
