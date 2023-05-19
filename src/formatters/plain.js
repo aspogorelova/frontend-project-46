@@ -5,7 +5,7 @@ const getValue = (value) => {
     return String('[complex value]');
   }
 
-  return (typeof value === 'string' || typeof value === 'number') ? `'${value}'` : value;
+  return (typeof value === 'string') ? `'${value}'` : value;
 };
 
 const makePlain = (data) => {
