@@ -16,7 +16,7 @@ const compareObject = (data1, data2) => {
     if (!_.has(data2, key)) {
       return { key, type: 'deleted', value: data1[key] };
     }
-    if (data1[key] !== data2[key]) {
+    if (!_.isEqual(data1[key], data2[key])) {
       return {
         key, type: 'changed', value1: data1[key], value2: data2[key],
       };
