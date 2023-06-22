@@ -1,14 +1,16 @@
 import { readFileSync } from 'fs';
-import getFormat from './parsers.js';
-import compareObject from './compare.js';
+import { getFormat, parsers } from './parsers.js';
+import compare from './compare.js';
 import makeFormatting from './formatters/index.js';
 
-const gendiff = (pathOfFile1, pathOfFile2, format = 'stylish') => {
-  const contentData1 = readFileSync(pathOfFile1, 'utf-8');
-  const contentData2 = readFileSync(pathOfFile2, 'utf-8');
-  const data1 = getFormat(pathOfFile1, contentData1);
-  const data2 = getFormat(pathOfFile2, contentData2);
-  const diff = compareObject(data1, data2);
+const gendiff = (path1, path2, format = 'stylish') => {
+  const content1 = readFileSync(path1, 'utf-8');
+  const content2 = readFileSync(path2, 'utf-8');
+  const format1 = getFormat(path1);
+  const format2 = getFormat(path2);
+  const data1 = parsers(format1, content1);
+  const data2 = parsers(format2, content2);
+  const diff = compare(data1, data2);
   return makeFormatting(diff, format);
 };
 

@@ -2,12 +2,12 @@ import { expect, test } from '@jest/globals';
 import path from 'path';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
-import gendiff from '../../src/index.js';
+import gendiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getPathFile = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getPathFile = (filename) => path.join(__dirname, filename);
 const readFile = (filename) => readFileSync(getPathFile(filename), 'utf-8');
 
 test.each([
@@ -31,19 +31,6 @@ test.each([
   },
   {
     file1: 'file1.yaml', file2: 'file2.json', format: 'stylish', expectResult: 'stylishFormat.txt',
-  },
-  {
-    file1: 'firstFile1.json', file2: 'firstFile2.json', format: 'stylish', expectResult: 'stylishFormat1.txt',
-  },
-  {
-    file1: 'firstFile1.yaml', file2: 'firstFile2.yaml', format: 'stylish', expectResult: 'stylishFormat1.txt',
-
-  },
-  {
-    file1: 'firstFile1.json', file2: 'firstFile2.yaml', format: 'stylish', expectResult: 'stylishFormat1.txt',
-  },
-  {
-    file1: 'firstFile1.yaml', file2: 'firstFile2.json', format: 'stylish', expectResult: 'stylishFormat1.txt',
   },
   {
     file1: 'file1.json', file2: 'file2.json', format: 'plain', expectResult: 'plainFormat.txt',

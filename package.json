@@ -17,18 +17,17 @@
   "author": "Anna Pogorelova",
   "license": "ISC",
   "dependencies": {
-    "@jest/globals": "^29.5.0",
     "commander": "^10.0.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@jest/globals": "^29.5.0",
     "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
-    "jest": "^29.5.0",
-    "prettier": "^2.8.6"
+    "jest": "^29.5.0"
   },
   "bugs": {
     "url": "https://github.com/aspogorelova/frontend-project-46/issues"

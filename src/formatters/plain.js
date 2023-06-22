@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const getValue = (value) => {
+const stringify = (value) => {
   if (_.isObject(value)) {
     return String('[complex value]');
   }
@@ -18,13 +18,13 @@ const makePlain = (data) => {
         return node.children.flatMap((item) => iter(item, currentPath));
 
       case 'added':
-        return `Property '${currentPath.join('.')}' was added with value: ${getValue(node.value)}`;
+        return `Property '${currentPath.join('.')}' was added with value: ${stringify(node.value)}`;
 
       case 'deleted':
         return `Property '${currentPath.join('.')}' was removed`;
 
       case 'changed':
-        return `Property '${currentPath.join('.')}' was updated. From ${getValue(node.value1)} to ${getValue(node.value2)}`;
+        return `Property '${currentPath.join('.')}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
 
       case 'unchanged':
         return null;

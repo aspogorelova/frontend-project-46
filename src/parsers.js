@@ -1,12 +1,12 @@
 import path from 'path';
 import yaml from 'js-yaml';
 
-export default (pathOfFile, data) => {
-  const format = path.extname(pathOfFile).replace('.', '');
+export const getFormat = (pathofFile) => path.extname(pathofFile).replace('.', '');
+
+export const parsers = (format, data) => {
   switch (format) {
     case 'json': return JSON.parse(data);
-    case 'yaml': return yaml.load(data);
-    case 'yml': return yaml.load(data);
-    default: return null;
+    case 'yaml': case 'yml': return yaml.load(data);
+    default: return `Unknown format: ${format}`;
   }
 };
