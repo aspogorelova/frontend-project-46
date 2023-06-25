@@ -58,7 +58,7 @@ gendiff --format json <name of file1> <name of file2>
 ## 👀 Demonstration
 
 ### Installation:
-[![asciicast](https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY.svg)](<script async id="asciicast-vc6HDhcnYMRVV91BY4wqD0FYY" src="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY.js"></script>)
+<script async id="asciicast-vc6HDhcnYMRVV91BY4wqD0FYY" src="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY.js"></script>
 
 ### Compare "flat" json-files in defaul format:
 
