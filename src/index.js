@@ -1,7 +1,10 @@
 import { readFileSync } from 'fs';
-import { getFormat, parsers } from './parsers.js';
+import path from 'path';
+import parsers from './parsers.js';
 import compare from './compare.js';
 import makeFormatting from './formatters/index.js';
+
+export const getFormat = (pathofFile) => path.extname(pathofFile).replace('.', '');
 
 const gendiff = (path1, path2, format = 'stylish') => {
   const content1 = readFileSync(path1, 'utf-8');
