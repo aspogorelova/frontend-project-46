@@ -10,7 +10,7 @@ const getValue = (value, depth) => {
 
   const entries = Object.entries(value);
   const lines = entries.map(([key, val]) => {
-    const line = `${getIndent(depth+1)}  ${key}: ${getValue(val, depth + 1)}`;
+    const line = `${getIndent(depth + 1)}  ${key}: ${getValue(val, depth + 1)}`;
     return line;
   });
   return ['{', ...lines, `${getIndent(depth)}  }`].join('\n');
