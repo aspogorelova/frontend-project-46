@@ -58,21 +58,25 @@ gendiff --format json <name of file1> <name of file2>
 ## 👀 Demonstration
 
 ### Installation:
-<a href="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY" target="_blank"><img src="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY.svg" id="asciicast-vc6HDhcnYMRVV91BY4wqD0FYY"></a>
-<script async id="asciicast-vc6HDhcnYMRVV91BY4wqD0FYY" src="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY.js"></script>
+
+<a href="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY" target="_blank"><img src="https://asciinema.org/a/vc6HDhcnYMRVV91BY4wqD0FYY.svg" /></a>
 
 ### Compare "flat" json-files in defaul format:
 
-<a href="https://asciinema.org/a/bP5auqO2kJtH4S1b2zbB6xCDs" target="_blank"><img src="https://github.com/aspogorelova/frontend-project-46/blob/main/1.jpg"></a>
+<a href="https://asciinema.org/a/bP5auqO2kJtH4S1b2zbB6xCDs" target="_blank"><img src="https://asciinema.org/a/bP5auqO2kJtH4S1b2zbB6xCDs.svg" /></a>
 
 ### Compare "flat" yaml-files in default format: 
-<a href="https://asciinema.org/a/rX6pKMHgnPCm63rWG5WAl2BJP" target="_blank"><img src="https://github.com/aspogorelova/frontend-project-46/blob/main/2.jpg"></a>
+
+<a href="https://asciinema.org/a/rX6pKMHgnPCm63rWG5WAl2BJP" target="_blank"><img src="https://asciinema.org/a/rX6pKMHgnPCm63rWG5WAl2BJP.svg" /></a>
 
 ### Compare nested files json and yaml in default format:  
-<a href="https://asciinema.org/a/lgfeQ7oE9UAcesTJmCKyPOF0I" target="_blank"><img src="https://github.com/aspogorelova/frontend-project-46/blob/main/3.jpg"></a>
+
+<a href="https://asciinema.org/a/lgfeQ7oE9UAcesTJmCKyPOF0I" target="_blank"><img src="https://asciinema.org/a/lgfeQ7oE9UAcesTJmCKyPOF0I.svg" /></a>
 
 ### Compare nested files json and yaml in plain format:  
-<a href="https://asciinema.org/a/oWCxB866gdoV0WFL8UTtIbxIZ" target="_blank"><img src="https://github.com/aspogorelova/frontend-project-46/blob/main/4.jpg"></a>
+
+<a href="https://asciinema.org/a/oWCxB866gdoV0WFL8UTtIbxIZ" target="_blank"><img src="https://asciinema.org/a/oWCxB866gdoV0WFL8UTtIbxIZ.svg" /></a>
 
 ### Compare nested files yaml and json in json format:  
-<a href="https://asciinema.org/a/ZRuRhhLrCHzOlwyuFkIY6quvf" target="_blank"><img src="https://github.com/aspogorelova/frontend-project-46/blob/main/5.jpg"></a>
+
+<a href="https://asciinema.org/a/ZRuRhhLrCHzOlwyuFkIY6quvf" target="_blank"><img src="https://asciinema.org/a/ZRuRhhLrCHzOlwyuFkIY6quvf.svg" /></a>

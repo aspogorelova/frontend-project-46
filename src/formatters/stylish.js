@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2);
-const getIndent1 = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 4);
+// const getIndent1 = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 4);
 
 const getValue = (value, depth) => {
   if (!_.isObject(value)) {
@@ -10,10 +10,10 @@ const getValue = (value, depth) => {
 
   const entries = Object.entries(value);
   const lines = entries.map(([key, val]) => {
-    const line = `${getIndent(depth)}  ${key}: ${getValue(val, depth + 1)}`;
+    const line = `${getIndent(depth+1)}  ${key}: ${getValue(val, depth + 1)}`;
     return line;
   });
-  return ['{', ...lines, `${getIndent1(depth)}}`].join('\n');
+  return ['{', ...lines, `${getIndent(depth)}  }`].join('\n');
 };
 
 const makeStylish = (data) => {
@@ -24,19 +24,19 @@ const makeStylish = (data) => {
           return `${getIndent(depth)}  ${item.key}: {\n${iter(item.children, depth + 1)}\n${getIndent(depth)}  }`;
 
         case 'unchanged':
-          return `${getIndent(depth)}  ${item.key}: ${getValue(item.value, depth + 1)}`;
+          return `${getIndent(depth)}  ${item.key}: ${getValue(item.value, depth)}`;
 
         case 'changed':
           return [
-            `${getIndent(depth)}- ${item.key}: ${getValue(item.value1, depth + 1)}`,
-            `${getIndent(depth)}+ ${item.key}: ${getValue(item.value2, depth + 1)}`,
+            `${getIndent(depth)}- ${item.key}: ${getValue(item.value1, depth)}`,
+            `${getIndent(depth)}+ ${item.key}: ${getValue(item.value2, depth)}`,
           ];
 
         case 'added':
-          return `${getIndent(depth)}+ ${item.key}: ${getValue(item.value, depth + 1)}`;
+          return `${getIndent(depth)}+ ${item.key}: ${getValue(item.value, depth)}`;
 
         case 'deleted':
-          return `${getIndent(depth)}- ${item.key}: ${getValue(item.value, depth + 1)}`;
+          return `${getIndent(depth)}- ${item.key}: ${getValue(item.value, depth)}`;
 
         default:
           return 'Error';
