@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2);
-// const getIndent1 = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 4);
 
 const getValue = (value, depth) => {
   if (!_.isObject(value)) {

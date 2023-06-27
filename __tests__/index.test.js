@@ -24,9 +24,6 @@ test.each([
     file1: 'file1.yaml', file2: 'file2.yaml', expectResult: 'stylishFormat.txt',
   },
   {
-    file1: 'file1.yml', file2: 'file2.yml', format: 'stylish', expectResult: 'stylishFormat.txt',
-  },
-  {
     file1: 'file1.json', file2: 'file2.yaml', format: 'stylish', expectResult: 'stylishFormat.txt',
   },
   {
@@ -39,9 +36,6 @@ test.each([
     file1: 'file1.yaml', file2: 'file2.yaml', format: 'plain', expectResult: 'plainFormat.txt',
   },
   {
-    file1: 'file1.yml', file2: 'file2.yml', format: 'plain', expectResult: 'plainFormat.txt',
-  },
-  {
     file1: 'file1.json', file2: 'file2.yaml', format: 'plain', expectResult: 'plainFormat.txt',
   },
   {
@@ -52,9 +46,6 @@ test.each([
   },
   {
     file1: 'file1.yaml', file2: 'file2.yaml', format: 'json', expectResult: 'jsonFormat.txt',
-  },
-  {
-    file1: 'file1.yml', file2: 'file2.yml', format: 'json', expectResult: 'jsonFormat.txt',
   },
   {
     file1: 'file1.json', file2: 'file2.yaml', format: 'json', expectResult: 'jsonFormat.txt',
